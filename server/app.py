@@ -25,6 +25,10 @@ def count(number):
 
 @app.route('/math/<int:num1>/<string:operation>/<int:num2>')
 def math(num1, operation, num2):
+    # if operation == 'div':
+    #     return str(num1 / num2)
+    # answer = eval(str(num1) + str(operation) + str(num2))
+    # return answer
     if operation == '+':
         return str(num1 + num2)
     elif operation == '-':
