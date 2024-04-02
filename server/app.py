@@ -4,8 +4,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def index():
     return '<h1>Python Operations with Flask Routing and Views</h1>'
@@ -24,9 +22,11 @@ def count(number):
 
 @app.route('/math/<int:num1>/<string:operation>/<int:num2>')
 def math(num1, operation, num2):
+    
     if operation == 'div':
         return str(num1 / num2)
     return str(eval(str(num1) + str(operation) + str(num2)))
+
     
     # if operation == '+':
     #     return str(num1 + num2)
