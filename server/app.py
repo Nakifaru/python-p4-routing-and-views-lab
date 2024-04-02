@@ -18,9 +18,20 @@ def print_string(parameter):
 
 @app.route('/count/<int:number>')
 def count(number):
+    numbers = ''
     for x in range(number):
-        return f'{x}\n'
+        numbers += str(x) + '\n'
+    return numbers
 
-@app.route('/math/<num1>/<operation>/<num2>')
+@app.route('/math/<int:num1>/<string:operation>/<int:num2>')
 def math(num1, operation, num2):
-    return f'{num1} {operation} {num2}'
+    if operation == '+':
+        return str(num1 + num2)
+    elif operation == '-':
+        return str(num1 - num2)
+    elif operation == 'div':
+        return str(num1 / num2)
+    elif operation == '*':
+        return str(num1 * num2)
+    elif operation == '%':
+        return str(num1 % num2)
